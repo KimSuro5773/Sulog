@@ -11,7 +11,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="isolate">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

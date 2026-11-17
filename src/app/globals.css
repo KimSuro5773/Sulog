@@ -314,6 +314,7 @@
 
   body {
     @apply bg-layer-default text-body text-neutral;
+    position: relative;
     word-break: keep-all;
     overflow-wrap: break-word;
   }

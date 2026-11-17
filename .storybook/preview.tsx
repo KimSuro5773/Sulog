@@ -44,7 +44,7 @@ const preview: Preview = {
       defaultTheme: "light",
     }),
     (Story) => (
-      <div className="bg-layer-default text-neutral">
+      <div className="isolate bg-layer-default text-neutral">
         <Story />
       </div>
     ),
