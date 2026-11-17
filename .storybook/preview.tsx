@@ -1,3 +1,4 @@
+import "@/app/globals.css";
 import { jetbrainsMono, pretendard } from "@/app/fonts";
 import { ReactRenderer, type Preview } from "@storybook/nextjs-vite";
 import { withThemeByClassName } from "@storybook/addon-themes";
