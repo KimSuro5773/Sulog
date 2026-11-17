@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
 
-function subscribe(onChange: () => void) {
+export function subscribeToStyleChange(onChange: () => void) {
   const observer = new MutationObserver(onChange);
   observer.observe(document.documentElement, {
     attributes: true,
@@ -15,7 +15,7 @@ function subscribe(onChange: () => void) {
 }
 
 export function useCssVariable(name: `--${string}`) {
-  return useSyncExternalStore(subscribe, () =>
+  return useSyncExternalStore(subscribeToStyleChange, () =>
     getComputedStyle(document.documentElement).getPropertyValue(name).trim(),
   );
 }
