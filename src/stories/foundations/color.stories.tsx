@@ -110,6 +110,12 @@ const backgroundTokens: ColorToken[] = [
     usage: "태그, 보조 버튼 배경",
   },
   {
+    name: "bg.neutral-weak-pressed",
+    cssVar: "--bg-neutral-weak-pressed",
+    className: "bg-neutral-weak-pressed",
+    usage: "보조 버튼을 눌렀을 때",
+  },
+  {
     name: "bg.neutral-subtle",
     cssVar: "--bg-neutral-subtle",
     className: "bg-neutral-subtle",
@@ -134,10 +140,28 @@ const backgroundTokens: ColorToken[] = [
     usage: "주요 버튼에 마우스를 올렸을 때",
   },
   {
+    name: "bg.brand-solid-pressed",
+    cssVar: "--bg-brand-solid-pressed",
+    className: "bg-brand-solid-pressed",
+    usage: "주요 버튼을 눌렀을 때",
+  },
+  {
     name: "bg.brand-weak",
     cssVar: "--bg-brand-weak",
     className: "bg-brand-weak",
     usage: "선택된 항목 등 약한 브랜드 배경",
+  },
+  {
+    name: "bg.brand-weak-hover",
+    cssVar: "--bg-brand-weak-hover",
+    className: "bg-brand-weak-hover",
+    usage: "약한 브랜드 배경에 마우스를 올렸을 때",
+  },
+  {
+    name: "bg.brand-weak-pressed",
+    cssVar: "--bg-brand-weak-pressed",
+    className: "bg-brand-weak-pressed",
+    usage: "약한 브랜드 배경을 눌렀을 때",
   },
   {
     name: "bg.informative-weak",
