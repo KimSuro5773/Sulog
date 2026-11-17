@@ -23,8 +23,10 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^10.6.7",
     "@storybook/addon-docs": "^10.6.7",
+    "@storybook/addon-themes": "10.6.7",
     "@storybook/nextjs-vite": "^10.6.7",
     "@tailwindcss/turbopack": "^4",
+    "@tailwindcss/vite": "4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
