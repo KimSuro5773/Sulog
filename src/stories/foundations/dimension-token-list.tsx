@@ -1,6 +1,4 @@
-import { useState, useSyncExternalStore } from "react";
-
-import { subscribeToStyleChange } from "./use-css-variable";
+import { formatLength, useComputedStyle } from "./computed-style";
 
 export type DimensionToken = {
   name: string;
@@ -9,27 +7,15 @@ export type DimensionToken = {
   usage?: string;
 };
 
-// 측정용 클래스가 적용한 max-width 값을 px와 rem으로 읽습니다.
-function readLength(element: HTMLElement | null) {
-  if (!element) return "";
-
-  const px = parseFloat(getComputedStyle(element).maxWidth);
-  const rootFontSize = parseFloat(
-    getComputedStyle(document.documentElement).fontSize,
-  );
-  return `${px}px · ${px / rootFontSize}rem`;
-}
-
 function DimensionTokenRow({ token }: { token: DimensionToken }) {
-  const [bar, setBar] = useState<HTMLElement | null>(null);
-  const value = useSyncExternalStore(subscribeToStyleChange, () =>
-    readLength(bar),
+  const [barRef, value] = useComputedStyle((style) =>
+    formatLength(style.maxWidth),
   );
 
   return (
     <li className="flex flex-col gap-2 py-4">
       <span
-        ref={setBar}
+        ref={barRef}
         className={`block h-4 w-full rounded-sm bg-brand-solid ${token.measureClassName}`}
       />
       <p className="flex flex-wrap gap-x-4 gap-y-1 text-caption text-neutral-subtle">

@@ -1,6 +1,4 @@
-import { useState, useSyncExternalStore } from "react";
-
-import { subscribeToStyleChange } from "./use-css-variable";
+import { useComputedStyle } from "./computed-style";
 
 export type TypographyToken = {
   className: string;
@@ -10,10 +8,7 @@ export type TypographyToken = {
 
 const defaultSample = "다람쥐 헌 쳇바퀴에 타고파 The quick brown fox";
 
-function readTypography(element: HTMLElement | null) {
-  if (!element) return "";
-
-  const style = getComputedStyle(element);
+function readTypography(style: CSSStyleDeclaration) {
   return [
     `크기 ${style.fontSize}`,
     `행간 ${style.lineHeight}`,
@@ -23,14 +18,11 @@ function readTypography(element: HTMLElement | null) {
 }
 
 function TypographyTokenRow({ token }: { token: TypographyToken }) {
-  const [sample, setSample] = useState<HTMLElement | null>(null);
-  const metrics = useSyncExternalStore(subscribeToStyleChange, () =>
-    readTypography(sample),
-  );
+  const [sampleRef, metrics] = useComputedStyle(readTypography);
 
   return (
     <li className="flex flex-col gap-2 py-5">
-      <p ref={setSample} className={token.className}>
+      <p ref={sampleRef} className={token.className}>
         {token.sample ?? defaultSample}
       </p>
       <p className="flex flex-wrap gap-x-4 gap-y-1 text-caption text-neutral-subtle">
