@@ -34,6 +34,7 @@ const preview: Preview = {
             "Motion",
             "Z-index",
           ],
+          "Components",
         ],
       },
     },

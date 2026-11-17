@@ -11,5 +11,5 @@
   "bracketSameLine": false,
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./src/app/globals.css",
-  "tailwindFunctions": ["mergeClassNames"]
+  "tailwindFunctions": ["mergeClassNames", "cva"]
 }
