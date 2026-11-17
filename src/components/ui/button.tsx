@@ -1,6 +1,8 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Children } from "react";
 
+import { Spinner } from "@/components/ui/spinner";
 import { mergeClassNames } from "@/lib/merge-class-names";
 
 export const buttonVariants = cva(
@@ -33,26 +35,60 @@ export const buttonVariants = cva(
   },
 );
 
+const spinnerSizeClassNames = {
+  sm: "size-4",
+  md: "size-4.5",
+  lg: "size-5",
+} as const;
+
 type ButtonProps = Omit<ButtonPrimitive.Props, "className"> &
   VariantProps<typeof buttonVariants> & {
     className?: string;
+    loading?: boolean;
   };
+
+function replaceLabelWithSpinner(
+  children: React.ReactNode,
+  spinnerClassName: string,
+) {
+  return Children.map(children, (child) =>
+    typeof child === "string" || typeof child === "number" ? (
+      <span className="relative inline-flex items-center justify-center">
+        <span className="opacity-0">{child}</span>
+        <Spinner className={`absolute inset-0 m-auto ${spinnerClassName}`} />
+      </span>
+    ) : (
+      child
+    ),
+  );
+}
 
 export function Button({
   className,
   variant,
   size,
   fullWidth,
+  loading = false,
+  disabled,
+  focusableWhenDisabled,
+  children,
   ...props
 }: ButtonProps) {
   return (
     <ButtonPrimitive
       data-slot="button"
+      disabled={disabled || loading}
+      focusableWhenDisabled={focusableWhenDisabled || loading}
+      aria-busy={loading || undefined}
       className={mergeClassNames(
         buttonVariants({ variant, size, fullWidth }),
         className,
       )}
       {...props}
-    />
+    >
+      {loading
+        ? replaceLabelWithSpinner(children, spinnerSizeClassNames[size ?? "md"])
+        : children}
+    </ButtonPrimitive>
   );
 }

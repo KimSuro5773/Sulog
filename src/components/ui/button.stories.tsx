@@ -1,7 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "./button";
+
+function SubmitExample() {
+  const [loading, setLoading] = useState(false);
+
+  const submit = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
+  };
+
+  return (
+    <Button size="sm" loading={loading} onClick={submit}>
+      등록
+    </Button>
+  );
+}
 
 const variants = [
   { variant: "primary", label: "Primary", children: "구독하기" },
@@ -15,6 +31,7 @@ const states = [
   { state: "active", label: "누름" },
   { state: "focus", label: "포커스" },
   { state: "disabled", label: "비활성" },
+  { state: "loading", label: "로딩" },
 ] as const;
 
 const stateId = (variant: string, state: string) => `${variant}-${state}`;
@@ -40,6 +57,7 @@ const meta = {
     },
     fullWidth: { control: "boolean" },
     disabled: { control: "boolean" },
+    loading: { control: "boolean" },
   },
 } satisfies Meta<typeof Button>;
 
@@ -67,7 +85,7 @@ export const States: Story = {
     },
   },
   render: () => (
-    <div className="grid grid-cols-[auto_repeat(5,auto)] items-center justify-start gap-x-10 gap-y-6">
+    <div className="grid grid-cols-[auto_repeat(6,auto)] items-center justify-start gap-x-10 gap-y-6">
       <span />
       {states.map(({ state, label }) => (
         <span key={state} className="text-caption text-neutral-subtle">
@@ -84,6 +102,7 @@ export const States: Story = {
             id={stateId(variant, state)}
             variant={variant}
             disabled={state === "disabled"}
+            loading={state === "loading"}
           >
             {children}
           </Button>
@@ -127,6 +146,32 @@ export const WithIcon: Story = {
       </Button>
     </div>
   ),
+};
+
+export const Loading: Story = {
+  args: { loading: true },
+  render: (args) => (
+    <div className="flex items-center gap-4">
+      <Button {...args} size="sm">
+        등록
+      </Button>
+      <Button {...args} size="md">
+        구독하기
+      </Button>
+      <Button {...args} size="lg">
+        구독하기
+      </Button>
+      <Button {...args} variant="secondary">
+        전체 보기
+        <ArrowRight />
+      </Button>
+    </div>
+  ),
+};
+
+export const LoadingOnSubmit: Story = {
+  parameters: { controls: { disable: true } },
+  render: () => <SubmitExample />,
 };
 
 export const FullWidth: Story = {
