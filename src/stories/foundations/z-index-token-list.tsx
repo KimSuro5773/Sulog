@@ -1,4 +1,4 @@
-import { useComputedStyle } from "./computed-style";
+import { useComputedStyle } from "./style-value";
 
 export type ZIndexToken = {
   className: string;

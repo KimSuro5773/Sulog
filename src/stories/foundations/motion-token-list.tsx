@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useComputedStyle } from "./computed-style";
+import { useComputedStyle } from "./style-value";
 
 export type MotionToken = {
   className: string;

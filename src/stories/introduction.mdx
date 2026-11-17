@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# Sulog 디자인 시스템
+
+개인 개발 블로그 Sulog에서 쓰는 디자인 토큰과 컴포넌트를 정리한 문서입니다.
+
+모든 토큰 값은 `src/app/globals.css` 한 곳에서 정의합니다. 이 문서는 브라우저에 실제로 적용된 값을 읽어서 보여 주므로, globals.css를 고치면 문서에 표시되는 값도 함께 바뀝니다.
+
+## 색상 토큰 이름 규칙
+
+색상 토큰은 디자인 시스템의 이름 규칙을 따라 `속성.역할-변형-상태` 순서로 짓습니다.
+
+- **속성**: 색을 칠하는 대상입니다. `fg`(글자), `bg`(배경), `stroke`(테두리)가 있습니다.
+- **역할**: 색이 전달하는 의미입니다. `neutral`, `brand`, `informative`, `positive`, `important`, `warning`, `critical`, `layer`, `disabled`, `overlay`, `focus-ring`이 있습니다.
+- **변형**: 강조 정도입니다. `solid`, `weak`, `muted`, `subtle` 순서로 약해집니다. `on-brand-solid`는 `brand-solid` 배경 위에 놓이는 색이고, `alpha`는 반투명한 색입니다.
+- **상태**: 사용자 동작에 따라 바뀌는 색입니다.
+
+## CSS 변수와 Tailwind 클래스
+
+색상 토큰 하나는 CSS 변수 하나와 Tailwind 클래스 하나로 연결됩니다. 클래스 이름에는 속성 이름을 다시 붙이지 않습니다.
+
+- `fg.neutral` → `--fg-neutral` → `text-neutral`
+- `bg.layer-default` → `--bg-layer-default` → `bg-layer-default`
+- `stroke.neutral-weak` → `--stroke-neutral-weak` → `border-neutral-weak`
+- `stroke.focus-ring` → `--stroke-focus-ring` → `outline-focus-ring`
+
+글자 크기, 간격, 크기, 모서리, 그림자, 모션, z-index는 Tailwind 테마 변수로 정의했습니다. 예를 들어 `--radius-md`는 `rounded-md`로, `--spacing-gutter`는 `px-gutter`처럼 씁니다.
+
+## 테마와 화면 너비
+
+- 툴바의 테마 메뉴에서 라이트와 다크를 바꿀 수 있습니다. 다크 모드는 `html` 요소에 `dark` 클래스를 붙이는 방식으로 동작합니다.
+- 툴바의 viewport 메뉴에서 화면 너비를 바꿀 수 있습니다. 제목 글자 크기, `gutter`, `hit`처럼 태블릿 너비부터 값이 바뀌는 토큰은 이 메뉴로 확인합니다. 기준 너비는 Foundations › Size › Breakpoint에 있습니다.
+
+## 글꼴
+
+- `font-sans`: Pretendard. 본문과 UI에 씁니다.
+- `font-mono`: JetBrains Mono. 코드에 씁니다.
+
+## 스토리 위치
+
+- 디자인 토큰 문서: `src/stories/foundations/`
+- 컴포넌트 스토리: 컴포넌트 파일 옆 (예: `src/components/button/button.stories.tsx`)

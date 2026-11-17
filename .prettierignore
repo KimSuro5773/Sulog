@@ -20,3 +20,5 @@ coverage/
 playwright-report/
 
 storybook-static/
+
+.impeccable/

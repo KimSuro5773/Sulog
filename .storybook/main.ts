@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-themes",
   ],
   framework: "@storybook/nextjs-vite",
+  features: { backgrounds: false },
   async viteFinal(config) {
     const { mergeConfig } = await import("vite");
     return mergeConfig(config, { plugins: [tailwindcss()] });

@@ -1,4 +1,4 @@
-import { formatLength, useComputedStyle } from "./computed-style";
+import { formatLength, useComputedStyle } from "./style-value";
 
 export type DimensionToken = {
   name: string;

@@ -1,7 +1,8 @@
+import { withThemeByClassName } from "@storybook/addon-themes";
+import type { Preview, ReactRenderer } from "@storybook/nextjs-vite";
+
 import "@/app/globals.css";
 import { jetbrainsMono, pretendard } from "@/app/fonts";
-import { ReactRenderer, type Preview } from "@storybook/nextjs-vite";
-import { withThemeByClassName } from "@storybook/addon-themes";
 
 document.documentElement.classList.add(
   pretendard.variable,
@@ -16,6 +17,24 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+    },
+    options: {
+      storySort: {
+        order: [
+          "Introduction",
+          "Foundations",
+          [
+            "Color",
+            "Typography",
+            "Spacing",
+            "Size",
+            "Radius",
+            "Shadow",
+            "Motion",
+            "Z-index",
+          ],
+        ],
       },
     },
   },

@@ -1,4 +1,4 @@
-import { useCssVariable } from "./use-css-variable";
+import { useCssVariable } from "./style-value";
 
 export type ShadowToken = {
   className: string;
