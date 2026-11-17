@@ -1,5 +1,6 @@
 import "./globals.css";
 import { jetbrainsMono, pretendard } from "./fonts";
+import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/provider/theme-provider";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <ThemeProvider>
           <div className="isolate">{children}</div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
