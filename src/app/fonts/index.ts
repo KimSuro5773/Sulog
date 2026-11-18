@@ -27,14 +27,4 @@ export const jetbrainsMono = localFont({
   variable: "--font-jetbrains-mono",
   preload: false,
   adjustFontFallback: false,
-  fallback: [
-    "ui-monospace",
-    "SFMono-Regular",
-    "Menlo",
-    "Monaco",
-    "Consolas",
-    "Liberation Mono",
-    "Courier New",
-    "monospace",
-  ],
 });

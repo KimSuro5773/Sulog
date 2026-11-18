@@ -37,6 +37,7 @@ const preview: Preview = {
             "Scrollbar",
           ],
           "Components",
+          "Markdown",
         ],
       },
     },

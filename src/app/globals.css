@@ -228,7 +228,9 @@
 
 @theme inline {
   --font-sans: var(--font-pretendard);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", var(--font-pretendard);
 
   --text-color-neutral: var(--fg-neutral);
   --text-color-neutral-muted: var(--fg-neutral-muted);
