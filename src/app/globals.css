@@ -324,6 +324,37 @@
     }
   }
 
+  @supports (scrollbar-color: auto) {
+    :root {
+      scrollbar-color: var(--stroke-neutral-weak) transparent;
+    }
+
+    * {
+      scrollbar-width: thin;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: padding-box;
+    background-color: var(--stroke-neutral-weak);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--stroke-neutral-weak-hover);
+  }
+
   body {
     @apply bg-layer-default text-body text-neutral;
     position: relative;
@@ -339,5 +370,11 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+}
+
+@utility scrollbar-none {
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

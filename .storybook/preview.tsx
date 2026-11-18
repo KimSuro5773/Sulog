@@ -34,6 +34,7 @@ const preview: Preview = {
             "Shadow",
             "Motion",
             "Z-index",
+            "Scrollbar",
           ],
           "Components",
         ],
