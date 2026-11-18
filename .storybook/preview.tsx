@@ -3,6 +3,7 @@ import type { Preview, ReactRenderer } from "@storybook/nextjs-vite";
 
 import "@/app/globals.css";
 import { jetbrainsMono, pretendard } from "@/app/fonts";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 document.documentElement.classList.add(
   pretendard.variable,
@@ -45,9 +46,11 @@ const preview: Preview = {
       defaultTheme: "light",
     }),
     (Story) => (
-      <div className="isolate bg-layer-default text-neutral">
-        <Story />
-      </div>
+      <TooltipProvider>
+        <div className="isolate bg-layer-default text-neutral">
+          <Story />
+        </div>
+      </TooltipProvider>
     ),
   ],
 };
