@@ -63,7 +63,9 @@ export const WithName: Story = {
         <Avatar name="김개발" />
         <div className="flex flex-col">
           <span className="text-label text-neutral">김개발</span>
-          <span className="text-caption text-neutral-subtle">2026.09.24</span>
+          <span className="text-caption text-neutral-subtle">
+            2026년 9월 24일
+          </span>
         </div>
       </div>
       <div className="flex items-center gap-4">

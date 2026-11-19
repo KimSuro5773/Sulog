@@ -50,7 +50,7 @@ export const InPostItem: Story = {
       <Thumbnail src={sampleImage} />
       <div className="flex flex-col gap-1">
         <span className="text-caption text-neutral-subtle">
-          인프라 · 2026.09.17
+          인프라 · 2026년 9월 17일
         </span>
         <span className="text-title-5 text-neutral">
           GitHub Actions와 Docker로 Spring Boot 무중단 배포 구성하기
