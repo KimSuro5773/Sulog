@@ -20,6 +20,12 @@ const fixedTokens: TypographyToken[] = [
   { className: "text-body", usage: "기본 글자, UI 글자" },
   { className: "text-label", usage: "버튼, 입력창, 탭 이름" },
   { className: "text-caption", usage: "날짜, 태그 등 보조 정보" },
+  { className: "text-logo", usage: "헤더 로고", sample: "Sulog" },
+  {
+    className: "text-footer-title",
+    usage: "푸터 블로그 이름",
+    sample: "Sulog",
+  },
   {
     className: "font-mono text-code",
     usage: "코드 블록",
