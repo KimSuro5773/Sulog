@@ -18,9 +18,17 @@ const fixedTokens: TypographyToken[] = [
   { className: "text-title-5", usage: "카드, 목록 항목 제목" },
   { className: "text-body-lg", usage: "글 본문" },
   { className: "text-body", usage: "기본 글자, UI 글자" },
+  {
+    className: "text-body-strong",
+    usage: "검색 결과 제목, 작은 빈 상태 제목",
+  },
+  { className: "text-body-sm", usage: "검색 결과 요약" },
   { className: "text-label", usage: "버튼, 입력창, 탭 이름" },
+  { className: "text-label-strong", usage: "현재 메뉴" },
   { className: "text-caption", usage: "날짜, 태그 등 보조 정보" },
+  { className: "text-caption-strong", usage: "툴팁, 토스트 제목" },
   { className: "text-logo", usage: "헤더 로고", sample: "Sulog" },
+  { className: "text-numeral", usage: "404 숫자", sample: "404" },
   {
     className: "text-footer-title",
     usage: "푸터 블로그 이름",

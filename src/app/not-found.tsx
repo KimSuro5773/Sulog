@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="mx-auto flex min-h-full max-w-list flex-col items-center justify-center px-gutter py-18 text-center">
-      <p className="text-[4rem] leading-none font-bold tracking-[-0.03em] text-brand">
-        404
-      </p>
+      <p className="text-numeral text-brand">404</p>
       <h1 className="mt-4 text-title-4 text-neutral">
         페이지를 찾을 수 없습니다
       </h1>

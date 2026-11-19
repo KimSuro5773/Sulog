@@ -184,13 +184,29 @@
   --text-body--line-height: 1.6;
   --text-body--font-weight: 400;
 
+  --text-body-strong: 1rem;
+  --text-body-strong--line-height: 1.6;
+  --text-body-strong--font-weight: 600;
+
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.6;
+  --text-body-sm--font-weight: 400;
+
   --text-label: 0.9375rem;
   --text-label--line-height: 1.5;
   --text-label--font-weight: 500;
 
+  --text-label-strong: 0.9375rem;
+  --text-label-strong--line-height: 1.5;
+  --text-label-strong--font-weight: 600;
+
   --text-caption: 0.8125rem;
   --text-caption--line-height: 1.5;
   --text-caption--font-weight: 400;
+
+  --text-caption-strong: 0.8125rem;
+  --text-caption-strong--line-height: 1.5;
+  --text-caption-strong--font-weight: 500;
 
   --text-code: 0.875rem;
   --text-code--line-height: 1.7;
@@ -204,6 +220,11 @@
   --text-logo--line-height: 1.5;
   --text-logo--font-weight: 700;
   --text-logo--letter-spacing: -0.02em;
+
+  --text-numeral: 4rem;
+  --text-numeral--line-height: 1;
+  --text-numeral--font-weight: 700;
+  --text-numeral--letter-spacing: -0.03em;
 
   --text-footer-title: 1rem;
   --text-footer-title--line-height: 1.625;

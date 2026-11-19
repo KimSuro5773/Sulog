@@ -21,11 +21,11 @@ export function Toaster(props: ToasterProps) {
         unstyled: true,
         classNames: {
           toast:
-            "flex w-(--width) items-start gap-2 rounded-md border border-neutral-subtle bg-layer-floating p-4 font-sans text-caption font-medium text-neutral shadow-md data-[expanded=false]:data-[front=false]:*:opacity-0",
+            "flex w-(--width) items-start gap-2 rounded-md border border-neutral-subtle bg-layer-floating p-4 font-sans text-caption-strong text-neutral shadow-md data-[expanded=false]:data-[front=false]:*:opacity-0",
           icon: "relative flex size-5 shrink-0 items-center justify-center [&>svg]:size-5",
           loader: "flex",
           content: "flex min-w-0 flex-1 flex-col gap-0.5",
-          description: "font-normal text-neutral-muted",
+          description: "text-caption text-neutral-muted",
         },
       }}
       {...props}

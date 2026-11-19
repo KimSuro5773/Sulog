@@ -22,7 +22,7 @@ export function Tooltip({ label, children, ...props }: TooltipProps) {
           <TooltipPrimitive.Popup
             data-slot="tooltip"
             aria-hidden="true"
-            className="max-w-60 rounded-sm bg-layer-floating px-2.5 py-1.5 text-caption font-medium text-neutral shadow-md"
+            className="max-w-60 rounded-sm bg-layer-floating px-2.5 py-1.5 text-caption-strong text-neutral shadow-md"
           >
             {label}
           </TooltipPrimitive.Popup>

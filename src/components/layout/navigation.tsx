@@ -33,7 +33,7 @@ export function Navigation({ className }: { className?: string }) {
             <NavigationMenu.Link
               active={isCurrentPath(pathname, href, matches)}
               render={<Link href={href} />}
-              className="relative inline-flex min-h-hit items-center text-label whitespace-nowrap text-neutral-subtle transition-colors duration-fast hover:text-neutral focus-visible:rounded-sm focus-visible:-outline-offset-2 data-active:font-semibold data-active:text-neutral data-active:after:absolute data-active:after:inset-x-0 data-active:after:bottom-0 data-active:after:h-0.5 data-active:after:bg-brand-solid"
+              className="relative inline-flex min-h-hit items-center text-label whitespace-nowrap text-neutral-subtle transition-colors duration-fast hover:text-neutral focus-visible:rounded-sm focus-visible:-outline-offset-2 data-active:text-label-strong data-active:text-neutral data-active:after:absolute data-active:after:inset-x-0 data-active:after:bottom-0 data-active:after:h-0.5 data-active:after:bg-brand-solid"
             >
               {label}
             </NavigationMenu.Link>
