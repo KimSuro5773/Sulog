@@ -1,8 +1,7 @@
-import { Search } from "lucide-react";
 import Link from "next/link";
 
 import { Navigation } from "@/components/layout/navigation";
-import { IconButton } from "@/components/ui/icon-button";
+import { HeaderSearch } from "@/components/search/header-search";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Header() {
@@ -14,9 +13,7 @@ export function Header() {
         </Link>
         <Navigation className="col-span-2 row-start-2 scrollbar-none h-11 overflow-x-auto tablet:col-2 tablet:row-start-1 tablet:h-header" />
         <div className="flex h-header items-center gap-1">
-          <IconButton aria-label="검색 열기">
-            <Search />
-          </IconButton>
+          <HeaderSearch />
           <ThemeToggle />
         </div>
       </div>
