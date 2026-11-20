@@ -28,7 +28,7 @@ export function EmptyState({
       >
         {icon}
       </span>
-      <p className="text-body-strong text-neutral">{title}</p>
+      <p className="text-body-strong wrap-anywhere text-neutral">{title}</p>
 
       {description && (
         <p className="max-w-105 text-body-sm text-neutral-muted">
